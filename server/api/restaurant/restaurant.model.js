@@ -11,8 +11,8 @@ var RestaurantSchema = new mongoose.Schema({
   name: String,
   speciality: [String],
   menu: {
-    'Main Course Non Veg': [menu],
-    'Main Course Veg': [menu]
+    'Main_Course_Non_Veg': [menu],
+    'Main_Course_Veg': [menu]
   },
   address: String
 });
