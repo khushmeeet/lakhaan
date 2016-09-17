@@ -6,8 +6,9 @@ angular.module('lakhaanaApp')
     var i=0;
     menuService.get({id:$stateParams.id},
       function success(response){
-        console.log(response);
-        $scope.menuarray = response.menu;
+        $scope.res_obj = {name: response.name, spec: response.speciality, address: response.address};
+        $scope.menuObject = response.menu;
+        $scope.keys = Object.keys($scope.menuObject);
       },
       function error(errorResponse){
         console.log(errorResponse);
@@ -19,7 +20,7 @@ angular.module('lakhaanaApp')
         i++;
         console.log($scope.order);
       };
-      
+
       $scope.checkout = function () {
         var id = Auth.getCurrentUser()._id;
         console.log(id);
