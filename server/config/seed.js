@@ -13,7 +13,7 @@ Restaurant.find({}).removeAsync()
       name: 'Saleem',
       speciality: ['Non-Veg', 'Veg'],
       menu: {
-          'Main Course Non Veg': [{
+          'Main_Course_Non_Veg': [{
             name: 'Chicken Bhasha',
             price: 75
           }, {
@@ -23,7 +23,7 @@ Restaurant.find({}).removeAsync()
             name: 'Egg Roll',
             price: 50
           }],
-          'Main Course Veg': [{
+          'Main_Course_Veg': [{
             name: 'Chicken Bhasha',
             price: 75
           }, {
@@ -39,7 +39,7 @@ Restaurant.find({}).removeAsync()
       name: 'Apna Dhaba',
       speciality: ['Non-Veg', 'Veg'],
       menu: {
-          'Main Course Non Veg': [{
+          'Main_Course_Non_Veg': [{
             name: 'Chicken Bhasha',
             price: 75
           }, {
@@ -49,7 +49,7 @@ Restaurant.find({}).removeAsync()
             name: 'Egg Roll',
             price: 50
           }],
-          'Main Course Veg': [{
+          'Main_Course_Veg': [{
             name: 'Chicken Bhasha',
             price: 75
           }, {
@@ -59,13 +59,13 @@ Restaurant.find({}).removeAsync()
             name: 'Egg Roll',
             price: 50
           }]
-        },
+      },
         address: 'Sector 41A, Chandigarh'
       },{
       name: 'Flo caffee',
       speciality: ['Non-Veg', 'Veg'],
       menu: {
-          'Main Course Non Veg': [{
+          'Main_Course_Non_Veg': [{
             name: 'Chicken Bhasha',
             price: 75
           }, {
@@ -75,7 +75,7 @@ Restaurant.find({}).removeAsync()
             name: 'Egg Roll',
             price: 50
           }],
-          'Main Course Veg': [{
+          'Main_Course_Veg': [{
             name: 'Chicken Bhasha',
             price: 75
           }, {
@@ -85,13 +85,13 @@ Restaurant.find({}).removeAsync()
             name: 'Egg Roll',
             price: 50
           }]
-        },
+      },
         address: 'Sector 41A, Chandigarh'
       },{
       name: 'Flo caffee',
       speciality: ['Non-Veg', 'Veg'],
       menu: {
-          'Main Course Non Veg': [{
+          'Main_Course_Non_Veg': [{
             name: 'Chicken Bhasha',
             price: 75
           }, {
@@ -101,7 +101,7 @@ Restaurant.find({}).removeAsync()
             name: 'Egg Roll',
             price: 50
           }],
-          'Main Course Veg': [{
+          'Main_Course_Veg': [{
             name: 'Chicken Bhasha',
             price: 75
           }, {
