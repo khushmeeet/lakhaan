@@ -1,0 +1,32 @@
+<navbar></navbar>
+    <div layout="row" layout-xs="column">
+      <div flex="5"></div>
+      <div flex="50">
+        <h1 class="page-header">Menu</h1>
+        <md-list>
+          <md-list-item ng-repeat="item in menuarray" class="secondary-button-padding">
+            <p class="p-list">{{item.name}}</p>
+            <p class="p-list p2">{{item.price|currency:'&#8377;'}}</p>
+            <md-input-container>
+              <label>Quantity</label>
+              <input ng-model="quantity">
+            </md-input-container>
+            <md-button class="md-primary" ng-click="addItem(quantity,item.name,item.price)">Add</md-button>
+          </md-list-item>
+        </md-list>
+      </div>
+      <div flex="3"></div>
+      <div flex="33">
+        <h1 class="page-header">Your order</h1>
+        <md-list>
+          <md-list-item ng-repeat="item in order" class="secondary-button-padding">
+            <p class="p-list">{{item.name}}</p>
+            <p class="p-list p2">{{item.quantity}}</p>
+            <p class="p-list p2">{{item.price|currency:'&#8377;'}}</p>
+          </md-list-item>
+        </md-list>
+        <md-button class="md-raised md-primary" ng-click="checkout()">Continue</md-button>
+      </div>
+    </div>
+
+<footer></footer>

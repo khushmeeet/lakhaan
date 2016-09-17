@@ -1,0 +1,27 @@
+<navbar></navbar>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-8">
+      <h1 class="page-header">Menu</h1>
+        <table class="table table-striped">
+          <tr>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+          </tr>
+          <tr ng-if="order" ng-repeat="m in order">
+            <td>{{m.name}}</td>
+            <td>{{m.quantity}}</td>
+            <td>{{m.quantity*m.price|currency:'&#8377;'}}</td>
+          </tr>
+          <tr>
+            <td></td><td></td><td>Total :{{getTotal()|currency:'&#8377;'}}</td>
+          </tr>
+        </table>
+        <md-button href="/payment" class="md-raised md-primary checkout_btn">Checkout</md-button>
+    </div>
+  </div>
+</div>
+
+<footer></footer>
