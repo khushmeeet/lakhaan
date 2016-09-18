@@ -21,6 +21,10 @@ angular.module('lakhaanaApp')
         console.log($scope.order);
       };
 
+      $scope.deleteItem = function(item) {
+
+      }
+
       $scope.checkout = function () {
         var id = Auth.getCurrentUser()._id;
         console.log(id);
@@ -34,4 +38,8 @@ angular.module('lakhaanaApp')
           shareData.store($scope.order);
           $location.path('/checkout');
       };
-  });
+  }).filter('underscoreless', function () {
+  return function (input) {
+      return input.replace(/_/g, ' ');
+  };
+});
