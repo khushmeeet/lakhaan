@@ -4,6 +4,7 @@ angular.module('lakhaanaApp')
   .controller('MenuCtrl',function($scope,$stateParams,$location,menuService,Auth,shareData,userService){
     $scope.order = [];
     var i=0;
+    $scope.quantity = 1;
     menuService.get({id:$stateParams.id},
       function success(response){
         $scope.res_obj = {name: response.name, spec: response.speciality, address: response.address};
@@ -18,16 +19,16 @@ angular.module('lakhaanaApp')
         var obj={'name':name,'quantity':quantity,'price':price};
         $scope.order[i]=obj;
         i++;
-        console.log($scope.order);
+        $scope.quantity = 1;
       };
 
       $scope.deleteItem = function(item) {
-
+        var index = $scope.order.indexOf(item);
+        $scope.order.splice(index, 1);
       }
 
       $scope.checkout = function () {
         var id = Auth.getCurrentUser()._id;
-        console.log(id);
         /*userService.update({id:id},{'order':[$scope.order]},
           function success(response) {
             console.log(response);

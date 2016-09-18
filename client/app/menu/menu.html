@@ -6,7 +6,6 @@
       <p class="lead" ng-repeat="i in res_obj.spec">{{i}}&nbsp;</p>
     </div>
     <p class="lead">{{res_obj.address}}</p>
-    <img src="assets/images/logo_pure.png" alt="This is lakhaanaApp">
   </div>
 </header>
 <div layout="row" layout-xs="column">
@@ -14,19 +13,19 @@
   <div ng-cloak class="tabs">
     <md-content>
       <md-tabs md-dynamic-height md-border-bottom>
-        <md-tab label="{{i}}" ng-repeat="i in keys">
+        <md-tab label="{{i|underscoreless}}" ng-repeat="i in keys">
           <md-content class="md-padding">
             <md-list>
-              <md-list-item ng-repeat="obj in menuObject" class="secondary-button-padding" style="display:block;">
-                <div ng-repeat="o in obj" style="display:block;">
-                  <p class="p-list">{{o.name}}</p>
-                  <p class="p-list p2">{{o.price|currency:'&#8377;'}}</p>
-                  <md-input-container>
-                    <label>Quantity</label>
-                    <input ng-model="quantity">
-                  </md-input-container>
-                  <md-button class="md-primary" ng-click="addItem(quantity,o.name,o.price)">Add</md-button>
-                </div>
+              <md-list-item class="secondary-button-padding" ng-repeat="o in menuObject[i]">
+                <p class="p-list">{{o.name}}</p>
+                <p class="p-list p2">{{o.price|currency:'&#8377;'}}</p>
+                <md-input-container>
+                  <label>Quantity</label>
+                  <input ng-model="quantity">
+                </md-input-container>
+                <md-button class="md-fab md-mini md-primary" aria-label="Use Android" ng-click="addItem(quantity,o.name,o.price)">
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                </md-button>
               </md-list-item>
             </md-list>
           </md-content>
@@ -36,16 +35,19 @@
   </div>
   <div flex="5"></div>
   <div class="order">
-    <h4 class="page-header" style="margin:47px 0 20px;">Your order</h4>
+    <h4 class="page-header" style="margin:47px 0 20px;color:rgba(0,0,0,0.54);">Your order</h4>
     <md-list>
       <md-list-item ng-repeat="item in order" class="secondary-button-padding">
         <p class="p-list">{{item.name}}</p>
         <p class="p-list p2">{{item.quantity}}</p>
         <p class="p-list p2">{{item.price|currency:'&#8377;'}}</p>
+        <md-button class="md-fab md-mini md-primary" aria-label="Use Android" ng-click="deleteItem(item)">
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </md-button>
       </md-list-item>
     </md-list>
-    <md-button class="md-raised md-primary" ng-click="checkout()">Continue</md-button>
+    <p ng-if="order==0">Add items to cart.</p>
+    <md-button ng-if="order!=0" class="md-raised md-primary" ng-click="checkout()" style="float:right;">Continue</md-button>
   </div>
 </div>
-
 <footer></footer>
