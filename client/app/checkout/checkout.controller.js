@@ -9,10 +9,10 @@ angular.module('lakhaanaApp')
     var in_order = $scope.order
 
     var food = {}
-    for (var i = 0; i < in_order.length; i++) {
-      food = in_order[i]
-      total = total + (food.price * food.quantity)
-    }
+    $.each($scope.order, function (key, value) {
+      total = total + (value.price * value.quantity)
+    })
+
     $scope.totalCost = total;
 
     $scope.payment = function (value) {
