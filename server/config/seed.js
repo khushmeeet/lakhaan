@@ -13,32 +13,32 @@ Restaurant.find({}).removeAsync()
       name: 'Saleem',
       speciality: ['Non-Veg', 'Veg'],
       menu: {
-          'Main_Course_Non_Veg': [{
-            name: 'Chicken Bhasha',
-            price: 75
-          }, {
-            name: 'Paneer Bhasha',
-            price: 65
-          }, {
-            name: 'Egg Roll',
-            price: 50
-          }],
-          'Main_Course_Veg': [{
-            name: 'Chicken Bhasha',
-            price: 75
-          }, {
-            name: 'Paneer Bhasha',
-            price: 65
-          }, {
-            name: 'Egg Roll',
-            price: 50
-          }]
+        'Main_Course_Non_Veg': [{
+          name: 'Chicken Bhasha',
+          price: 75
+        }, {
+          name: 'Paneer Bhasha',
+          price: 65
+        }, {
+          name: 'Egg Roll',
+          price: 50
+        }],
+        'Main_Course_Veg': [{
+          name: 'Chicken Bhasha',
+          price: 75
+        }, {
+          name: 'Paneer Bhasha',
+          price: 65
+        }, {
+          name: 'Egg Roll',
+          price: 50
+        }]
       },
       address: 'Sector 41A, Chandigarh'
-    },{
-      name: 'Apna Dhaba',
-      speciality: ['Non-Veg', 'Veg'],
-      menu: {
+    }, {
+        name: 'Apna Dhaba',
+        speciality: ['Non-Veg', 'Veg'],
+        menu: {
           'Main_Course_Non_Veg': [{
             name: 'Chicken Bhasha',
             price: 75
@@ -59,12 +59,12 @@ Restaurant.find({}).removeAsync()
             name: 'Egg Roll',
             price: 50
           }]
-      },
+        },
         address: 'Sector 41A, Chandigarh'
-      },{
-      name: 'Flo caffee',
-      speciality: ['Non-Veg', 'Veg'],
-      menu: {
+      }, {
+        name: 'Flo caffee',
+        speciality: ['Non-Veg', 'Veg'],
+        menu: {
           'Main_Course_Non_Veg': [{
             name: 'Chicken Bhasha',
             price: 75
@@ -85,12 +85,12 @@ Restaurant.find({}).removeAsync()
             name: 'Egg Roll',
             price: 50
           }]
-      },
+        },
         address: 'Sector 41A, Chandigarh'
-      },{
-      name: 'Flo caffee',
-      speciality: ['Non-Veg', 'Veg'],
-      menu: {
+      }, {
+        name: 'Flo caffee',
+        speciality: ['Non-Veg', 'Veg'],
+        menu: {
           'Main_Course_Non_Veg': [{
             name: 'Chicken Bhasha',
             price: 75
@@ -111,22 +111,22 @@ Restaurant.find({}).removeAsync()
             name: 'Egg Roll',
             price: 50
           }]
-      },
-      address: 'Sector 41A, Chandigarh'
-    })
-    .then(() => {
-      console.log('finished populating restaurants');
-    })
+        },
+        address: 'Sector 41A, Chandigarh'
+      })
+      .then(() => {
+        console.log('finished populating restaurants');
+      })
   });
 
 User.find({}).removeAsync()
   .then(() => {
     User.createAsync({
-        provider: 'local',
-        name: 'Test User',
-        email: 'test@example.com',
-        password: 'test'
-      }, {
+      provider: 'local',
+      name: 'Test User',
+      email: 'test@example.com',
+      password: 'test'
+    }, {
         provider: 'local',
         role: 'admin',
         name: 'Admin',

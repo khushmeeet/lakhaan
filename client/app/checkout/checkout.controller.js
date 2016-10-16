@@ -7,8 +7,6 @@ angular.module('lakhaanaApp')
 
     $scope.order = shareData.get()
     var in_order = $scope.order
-    console.log($scope.order)
-    shareData2.store($scope.order);
 
     var food = {}
     for (var i = 0; i < in_order.length; i++) {
@@ -22,7 +20,9 @@ angular.module('lakhaanaApp')
         $location.path('/payment')
       }
       else {
-
+        shareData2.store(total)
+        shareData.store(in_order)
+        $location.path('/cod')
       }
     }
   })
