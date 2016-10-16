@@ -7,9 +7,9 @@
     height: 5%;
 }
 
-.review_p2{
-  margin-right: 50px;
-  font-size: 1.3em;
+.review_p2 {
+    margin-right: 50px;
+    font-size: 1.3em;
 }
 
 .review_p2::nth-child(3) {
@@ -34,8 +34,9 @@
 
 .order-info {
     margin-top: -7px;
+    width: 30%;
 }
 
 .page-header {
-    color: rgba(0,0,0,0.54);
+    color: rgba(0, 0, 0, 0.54);
 }

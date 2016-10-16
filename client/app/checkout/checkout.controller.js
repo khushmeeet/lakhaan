@@ -1,12 +1,14 @@
 'use strict'
 
 angular.module('lakhaanaApp')
-  .controller('CheckoutCtrl', function ($scope, $location, shareData, Auth, createOrder) {
+  .controller('CheckoutCtrl', function ($scope, $location, shareData, Auth, shareData2) {
     var total = 0
+    $scope.userLoggedIn = Auth.isLoggedIn();
 
     $scope.order = shareData.get()
     var in_order = $scope.order
     console.log($scope.order)
+    shareData2.store($scope.order);
 
     var food = {}
     for (var i = 0; i < in_order.length; i++) {
@@ -15,8 +17,12 @@ angular.module('lakhaanaApp')
     }
     $scope.totalCost = total;
 
-    // $scope.checkout = function(){
-    // $location.path('/payment')
-    // }
+    $scope.payment = function (value) {
+      if (value === 'online') {
+        $location.path('/payment')
+      }
+      else {
 
+      }
+    }
   })
