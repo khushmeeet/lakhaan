@@ -12,20 +12,16 @@ var UserSchema = new Schema({
     type: String,
     lowercase: true
   },
-  order: [{
-    name: String,
-    quantity: Number,
-    price: Number
-  }],
+  order: [],
   role: {
     type: String,
     default: 'user'
   },
-  address: [{
+  address: {
     name: String,
     phone: Number,
     address: String
-  }],
+  },
   password: String,
   provider: String,
   salt: String,
@@ -43,7 +39,12 @@ UserSchema
   .get(function () {
     return {
       'name': this.name,
-      'role': this.role
+      'role': this.role,
+      'order': [{
+        name: String,
+        quantity: Number,
+        price: Number
+      }]
     };
   });
 
