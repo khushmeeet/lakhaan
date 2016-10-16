@@ -2,7 +2,7 @@
 
 import crypto from 'crypto';
 var mongoose = require('bluebird').promisifyAll(require('mongoose'));
-import {Schema} from 'mongoose';
+import { Schema } from 'mongoose';
 
 const authTypes = ['github', 'twitter', 'facebook', 'google'];
 
@@ -12,15 +12,20 @@ var UserSchema = new Schema({
     type: String,
     lowercase: true
   },
-  order:[{
-    name:String,
-    quantity:Number,
-    price:Number
+  order: [{
+    name: String,
+    quantity: Number,
+    price: Number
   }],
   role: {
     type: String,
     default: 'user'
   },
+  address: [{
+    name: String,
+    phone: Number,
+    address: String
+  }],
   password: String,
   provider: String,
   salt: String,
@@ -35,7 +40,7 @@ var UserSchema = new Schema({
 // Public profile information
 UserSchema
   .virtual('profile')
-  .get(function() {
+  .get(function () {
     return {
       'name': this.name,
       'role': this.role
@@ -45,7 +50,7 @@ UserSchema
 // Non-sensitive info we'll be putting in the token
 UserSchema
   .virtual('token')
-  .get(function() {
+  .get(function () {
     return {
       '_id': this._id,
       'role': this.role
@@ -59,7 +64,7 @@ UserSchema
 // Validate empty email
 UserSchema
   .path('email')
-  .validate(function(email) {
+  .validate(function (email) {
     if (authTypes.indexOf(this.provider) !== -1) {
       return true;
     }
@@ -69,7 +74,7 @@ UserSchema
 // Validate empty password
 UserSchema
   .path('password')
-  .validate(function(password) {
+  .validate(function (password) {
     if (authTypes.indexOf(this.provider) !== -1) {
       return true;
     }
@@ -79,10 +84,10 @@ UserSchema
 // Validate email is not taken
 UserSchema
   .path('email')
-  .validate(function(value, respond) {
+  .validate(function (value, respond) {
     var self = this;
     return this.constructor.findOneAsync({ email: value })
-      .then(function(user) {
+      .then(function (user) {
         if (user) {
           if (self.id === user.id) {
             return respond(true);
@@ -91,12 +96,12 @@ UserSchema
         }
         return respond(true);
       })
-      .catch(function(err) {
+      .catch(function (err) {
         throw err;
       });
   }, 'The specified email address is already in use.');
 
-var validatePresenceOf = function(value) {
+var validatePresenceOf = function (value) {
   return value && value.length;
 };
 
@@ -104,7 +109,7 @@ var validatePresenceOf = function(value) {
  * Pre-save hook
  */
 UserSchema
-  .pre('save', function(next) {
+  .pre('save', function (next) {
     // Handle new/update passwords
     if (!this.isModified('password')) {
       return next();
@@ -214,7 +219,7 @@ UserSchema.methods = {
 
     if (!callback) {
       return crypto.pbkdf2Sync(password, salt, defaultIterations, defaultKeyLength)
-                   .toString('base64');
+        .toString('base64');
     }
 
     return crypto.pbkdf2(password, salt, defaultIterations, defaultKeyLength, (err, key) => {

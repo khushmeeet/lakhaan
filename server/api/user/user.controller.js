@@ -7,14 +7,14 @@ import jwt from 'jsonwebtoken';
 
 function validationError(res, statusCode) {
   statusCode = statusCode || 422;
-  return function(err) {
+  return function (err) {
     res.status(statusCode).json(err);
   }
 }
 
 function handleError(res, statusCode) {
   statusCode = statusCode || 500;
-  return function(err) {
+  return function (err) {
     res.status(statusCode).send(err);
   };
 }
@@ -39,7 +39,7 @@ export function create(req, res, next) {
   newUser.provider = 'local';
   newUser.role = 'user';
   newUser.saveAsync()
-    .spread(function(user) {
+    .spread(function (user) {
       var token = jwt.sign({ _id: user._id }, config.secrets.session, {
         expiresIn: 60 * 60 * 5
       });
@@ -70,7 +70,7 @@ export function show(req, res, next) {
  */
 export function destroy(req, res) {
   User.findByIdAndRemoveAsync(req.params.id)
-    .then(function() {
+    .then(function () {
       res.status(204).end();
     })
     .catch(handleError(res));
@@ -96,6 +96,21 @@ export function changePassword(req, res, next) {
       } else {
         return res.status(403).end();
       }
+    });
+}
+
+export function updateOrder(req, res) {
+  var userId = req.user._id;
+  var order = String(req.body.order);
+
+  User.findByIdAsync(userId)
+    .then(user => {
+      user.order = order;
+      return user.saveAsync()
+        .then(() => {
+          res.status(204).end()
+        })
+        .catch(validationError(res));
     });
 }
 
