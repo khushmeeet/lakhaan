@@ -100,18 +100,42 @@ export function changePassword(req, res, next) {
 }
 
 export function updateOrder(req, res) {
-  var userId = req.user._id;
-  var order = String(req.body.order);
-
-  User.findByIdAsync(userId)
-    .then(user => {
-      user.order = order;
-      return user.saveAsync()
-        .then(() => {
-          res.status(204).end()
-        })
-        .catch(validationError(res));
+  var userId = req.params.id;
+  User.findByIdAndUpdate(userId,
+    { $push: { 'order': req.body.order } },
+    { safe: true, upsert: true, new: true },
+    function (err, user) {
+      console.log(err);
     });
+}
+
+function handleEntityNotFound(res) {
+  return function (entity) {
+    if (!entity) {
+      res.status(404).end();
+      return null;
+    }
+    return entity;
+  };
+}
+
+function respondWithResult(res, statusCode) {
+  statusCode = statusCode || 200;
+  return function (entity) {
+    if (entity) {
+      res.status(statusCode).json(entity);
+    }
+  };
+}
+
+function saveUpdates(updates) {
+  return function (entity) {
+    var updated = _.merge(entity, updates);
+    return updated.saveAsync()
+      .spread(updated => {
+        return updated;
+      });
+  };
 }
 
 /**
