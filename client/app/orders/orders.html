@@ -1,15 +1,17 @@
 <navbar></navbar>
 <div class="container">
-	<div class="col-md-6" id="">
+	<div class="col-md-4"></div>
+	<div class="col-md-4">
 		<md-content>
 			<md-list flex>
-				<md-subheader class="md-no-sticky">Your orders</md-subheader>
+				<md-subheader class="md-no-sticky" id="order-list-title">Your orders</md-subheader>
+				<md-divider></md-divider>
 				<md-list-item class="md-3-line" ng-repeat="order in orderList" ng-click="null">
 					<div class="md-list-item-text" layout="column">
 						<md-list-item class="md-3-line" ng-repeat="(key,value) in order" ng-click="null">
 							<div class="md-3-line">
 								<div ng-repeat="(key,value) in value">
-									<h3><span id="key">{{ key }}</span> : <span id="value">{{ value }}</span></h3>
+									<h3><span id="key">{{ key | capitalize }}</span> : <span id="value">{{ value }}</span></h3>
 								</div>
 							</div>
 						</md-list-item>
@@ -19,4 +21,5 @@
 			</md-list>
 		</md-content>
 	</div>
+	<div class="col-md-4"></div>
 </div>
