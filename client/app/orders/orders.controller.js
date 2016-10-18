@@ -5,7 +5,6 @@
     User.get('me', function (detail) {
       console.log(detail);
       $scope.orderList = detail.order;
-      console.log($scope.orderList);
     });
   }
 
