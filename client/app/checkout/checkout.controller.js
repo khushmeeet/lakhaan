@@ -20,6 +20,7 @@ angular.module('lakhaanaApp')
         $location.path('/payment')
       }
       else {
+        in_order.total = total;
         in_order.date = Date.now();
         shareData2.store(total)
         shareData.store(in_order)
