@@ -14,7 +14,8 @@ var RestaurantSchema = new mongoose.Schema({
     'Main_Course_Non_Veg': [menu],
     'Main_Course_Veg': [menu]
   },
-  address: String
+  address: String,
+  phone: Number
 });
 
 export default mongoose.model('Restaurant', RestaurantSchema);
