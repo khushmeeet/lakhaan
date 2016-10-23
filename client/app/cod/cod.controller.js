@@ -20,18 +20,17 @@
           .highlightAction(false)
           .position('bottom');
         $mdToast.show(toast);
+        sendSMS.query({
+          authkey: '129164AppiG3Vti4b580c95b8',
+          mobiles: $scope.total[1],
+          message: order.toString(),
+          sender: 'HP-FOODLE',
+          route: 4,
+          country: 91,
+          response: 'json'
+        });
       }
     }
-
-    sendSMS.query({
-      authkey: '129164AppiG3Vti4b580c95b8',
-      mobiles: '9944490100',
-      message: 'this is message',
-      sender: 'HP-FOODLE',
-      route: 4,
-      country: 91,
-      response: 'json'
-    });
   }
 
   angular.module('lakhaanaApp')

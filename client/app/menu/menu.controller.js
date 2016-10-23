@@ -1,14 +1,16 @@
 'use strict';
 
 angular.module('lakhaanaApp')
-  .controller('MenuCtrl', function ($scope, $stateParams, $location, menuService, Auth, shareData, userService) {
+  .controller('MenuCtrl', function ($scope, $stateParams, $location, menuService, Auth, shareData, userService, shareData2) {
     $scope.order = {};
     var i = 0;
+    var res_phone;
     $scope.quantity = 1;
     menuService.get({ id: $stateParams.id },
       function success(response) {
         $scope.res_obj = { name: response.name, spec: response.speciality, address: response.address };
         $scope.menuObject = response.menu;
+        res_phone = response.phone;
         $scope.keys = Object.keys($scope.menuObject);
       },
       function error(errorResponse) {
@@ -30,6 +32,7 @@ angular.module('lakhaanaApp')
     $scope.continue = function () {
       var id = Auth.getCurrentUser()._id;
       shareData.store($scope.order);
+      shareData2.store(res_phone)
       console.log($scope.order)
       $location.path('/checkout');
     };

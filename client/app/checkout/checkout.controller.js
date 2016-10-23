@@ -4,9 +4,10 @@ angular.module('lakhaanaApp')
   .controller('CheckoutCtrl', function ($scope, $location, shareData, Auth, shareData2) {
     var total = 0
     $scope.userLoggedIn = Auth.isLoggedIn();
+    var res_phone = shareData2.get();
 
-    $scope.order = shareData.get()
-    var in_order = $scope.order
+    $scope.order = shareData.get();
+    var in_order = $scope.order;
 
     var food = {}
     $.each($scope.order, function (key, value) {
@@ -22,7 +23,7 @@ angular.module('lakhaanaApp')
       else {
         in_order.total = total;
         in_order.date = Date.now();
-        shareData2.store(total)
+        shareData2.store([total, res_phone])
         shareData.store(in_order)
         $location.path('/cod')
       }
