@@ -34,7 +34,8 @@ Restaurant.find({}).removeAsync()
           price: 50
         }]
       },
-      address: 'Sector 41A, Chandigarh'
+      address: 'Sector 41A, Chandigarh',
+      phone: 1112223334
     }, {
         name: 'Apna Dhaba',
         speciality: ['Non-Veg', 'Veg'],
@@ -60,7 +61,8 @@ Restaurant.find({}).removeAsync()
             price: 50
           }]
         },
-        address: 'Sector 41A, Chandigarh'
+        address: 'Sector 41A, Chandigarh',
+        phone: 1112223334
       }, {
         name: 'Flo caffee',
         speciality: ['Non-Veg', 'Veg'],
@@ -86,7 +88,8 @@ Restaurant.find({}).removeAsync()
             price: 50
           }]
         },
-        address: 'Sector 41A, Chandigarh'
+        address: 'Sector 41A, Chandigarh',
+        phone: 1112223334
       }, {
         name: 'Flo caffee',
         speciality: ['Non-Veg', 'Veg'],
@@ -112,7 +115,8 @@ Restaurant.find({}).removeAsync()
             price: 50
           }]
         },
-        address: 'Sector 41A, Chandigarh'
+        address: 'Sector 41A, Chandigarh',
+        phone: 1112223334
       })
       .then(() => {
         console.log('finished populating restaurants');
