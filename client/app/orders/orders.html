@@ -6,7 +6,7 @@
 			<md-list flex>
 				<md-subheader class="md-no-sticky" id="order-list-title">Your orders</md-subheader>
 				<md-divider></md-divider>
-				<md-list-item class="md-3-line" ng-repeat="order in orderList" ng-click="null">
+				<md-list-item class="md-3-line" ng-repeat="order in orderList" ng-click="null" ng-if="orderList.length">
 					<div class="md-list-item-text" layout="column">
 						<div id="md-list" class="md-3-line" ng-repeat="(key,value) in order" ng-click="null">
 							<h4>
@@ -24,6 +24,9 @@
 						<md-divider></md-divider>
 					</div>
 				</md-list-item>
+				<div ng-if="!orderList.length" id="no-orders">
+					<p>No Orders.</p>
+				</div>
 			</md-list>
 		</md-content>
 	</div>
