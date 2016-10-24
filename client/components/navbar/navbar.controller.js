@@ -1,10 +1,12 @@
 'use strict';
 
 class NavbarController {
-  //start-non-standard
+
+  $('#settings').on('click', function () {
+    $('#menu').css('display', 'block');
+  })
 
   isCollapsed = true;
-  //end-non-standard
 
   constructor(Auth) {
     this.isLoggedIn = Auth.isLoggedIn;
@@ -15,3 +17,4 @@ class NavbarController {
 
 angular.module('lakhaanaApp')
   .controller('NavbarController', NavbarController);
+

@@ -1,34 +1,33 @@
 <navbar></navbar>
-
 <header class="hero-unit" id="banner">
-	<div class="container">
-		<h1>foodlee</h1>
-		<p class="lead">foodlee build with Angular-fullstack</p>
-		<img src="assets/images/logo_pure.png" alt="This is lakhaanaApp">
-	</div>
+  <div class="container">
+    <div>
+      <h1>foodlee</h1>
+      <p class="lead">foodlee build with Angular-fullstack</p>
+      <img src="assets/images/logo_pure.png" alt="This is lakhaanaApp">
+    </div>
+  </div>
 </header>
-
 <div class="container" style="padding:0px;">
-	<div class="row">
-		<div class="col-lg-12">
-			<h3 class="page-header">Restaurants</h3>
-			<div class="restraunts">
-				<div class="card-square mdl-card mdl-shadow--2dp" ng-repeat="item in main.restaurants">
-					<div class="mdl-card__title mdl-card--expand">
-						<h2 class="mdl-card__title-text">{{item.name}}</h2>
-					</div>
-					<div class="mdl-card__supporting-text">
-						<h6 ng-repeat="s in item.speciality">{{ s }}</h6>
-					</div>
-					<div class="mdl-card__actions mdl-card--border">
-						<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect btn" ng-click="menu(item._id)">
+  <div class="row">
+    <div class="col-lg-12">
+      <h3 class="page-header">Restaurants</h3>
+      <div class="restraunts">
+        <div class="card-square mdl-card mdl-shadow--2dp" ng-repeat="item in main.restaurants">
+          <div class="mdl-card__title mdl-card--expand">
+            <h2 class="mdl-card__title-text">{{item.name}}</h2>
+          </div>
+          <div class="mdl-card__supporting-text">
+            <h6 ng-repeat="s in item.speciality">{{ s }}</h6>
+          </div>
+          <div class="mdl-card__actions mdl-card--border">
+            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect btn" ng-click="menu(item._id)">
               View
             </a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
 <footer></footer>

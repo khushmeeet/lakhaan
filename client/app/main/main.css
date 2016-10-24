@@ -19,7 +19,11 @@
   color: #F5F5F5;
   text-align: center;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-  background: #46B6AC;
+  background-color: #46B6AC;
+  background-image: url('../../assets/images/food2.jpeg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .navbar-text {
@@ -36,7 +40,7 @@
   height: 340px;
 }
 
-.restraunts{
+.restraunts {
   display: flex;
   flex-wrap: wrap;
 }
@@ -49,3 +53,4 @@
 .btn {
   float: right;
 }
+
