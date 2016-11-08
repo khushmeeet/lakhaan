@@ -6,9 +6,15 @@ angular.module('lakhaanaApp')
     var i = 0
     var res_phone
     $scope.quantity = 1
-    menuService.get({ id: $stateParams.id },
+    menuService.get({
+      id: $stateParams.id
+    },
       function success (response) {
-        $scope.res_obj = { name: response.name, spec: response.speciality, address: response.address }
+        $scope.res_obj = {
+          name: response.name,
+          spec: response.speciality,
+          address: response.address
+        }
         $scope.menuObject = response.menu
         res_phone = response.phone
         $scope.keys = Object.keys($scope.menuObject)
@@ -18,15 +24,19 @@ angular.module('lakhaanaApp')
       })
 
     $scope.addItem = function (quantity, name, price) {
-      var obj = { 'name': name, 'quantity': quantity, 'price': price }
+      var obj = {
+        'name': name,
+        'quantity': quantity,
+        'price': price
+      }
       $scope.order[i] = obj
       i++
       $scope.quantity = 1
     }
 
     $scope.deleteItem = function (item) {
-      var index = $scope.order.indexOf(item)
-      $scope.order.splice(index, 1)
+      var key = _.findKey($scope.order, item)
+      delete $scope.order[key]
     }
 
     $scope.continue = function () {
