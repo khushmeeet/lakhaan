@@ -1,0 +1,49 @@
+<navbar></navbar>
+<div layout="row" layout-xs="cloumn">
+	<div flex="5"></div>
+	<div class="col-xs-8 col-sm-6 col-md-8 review">
+		<h4 class="page-header">Review your order</h4>
+		<md-list>
+			<md-list-item ng-repeat="m in order" class="secondary-button-padding">
+				<p style="font-size: 1.3em;">{{m.name}}</p>
+				<p class="review_p2" style="text-align:right;">{{m.quantity}}</p>
+				<p class="review_p2" style="text-align:right;">{{m.price|currency:'&#8377;'}}</p>
+			</md-list-item>
+			<div class="final">
+				<h5 class="total">Total : {{totalCost | currency:'&#8377;'}}</h5>
+			</div>
+		</md-list>
+	</div>
+	<div flex="5"></div>
+	<div class="order-info">
+		<h4 class="page-header" style="margin:47px 0 20px;color:rgba(0,0,0,0.54);">Your order</h4>
+		<md-radio-group ng-model="order_options">
+			<md-radio-button value="cod">Cash on Delivery</md-radio-button>
+			<md-radio-button value="online"> Credit or Debit card </md-radio-button>
+		</md-radio-group>
+		<!--<md-content layout-gt-sm="row">
+			<div>
+				<md-input-container>
+					<label>Name</label>
+					<input input="customer.name" />
+				</md-input-container>
+				<md-input-container style="margin-right:0px;">
+					<label>Phone</label>
+					<input input="customer.phone" type="number" />
+				</md-input-container>
+			</div>
+		</md-content>
+		<md-content>
+			<div>
+				<md-input-container style="width:100%;">
+					<label>Address</label>
+					<input input="customer.address" />
+				</md-input-container>
+			</div>
+		</md-content>-->
+		<md-button ng-if="userLoggedIn" ng-click="payment(order_options)" class="md-raised md-primary checkout_btn">Checkout</md-button>
+		<md-button ng-if="!userLoggedIn" ui-sref="login" class="md-raised md-primary checkout_btn">Sign Up</md-button>
+	</div>
+</div>
+
+<footer></footer>

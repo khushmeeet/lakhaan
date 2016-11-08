@@ -1,0 +1,42 @@
+.final {
+    width: 100%;
+    background-color: #e9e4dc;
+    text-align: right;
+    border-radius: 5px;
+    line-height: 10px;
+    height: 5%;
+}
+
+.review_p2 {
+    margin-right: 50px;
+    font-size: 1.3em;
+}
+
+.review_p2::nth-child(3) {
+    text-align: right;
+}
+
+.total {
+    padding-right: 15px;
+    font-weight: lighter;
+    padding-top: 12px;
+    font-size: 1.2em;
+}
+
+.checkout_btn {
+    float: right;
+    margin-top: 20px;
+}
+
+.review {
+    width: 55%;
+}
+
+.order-info {
+    margin-top: -7px;
+    width: 30%;
+}
+
+.page-header {
+    color: rgba(0, 0, 0, 0.54);
+}

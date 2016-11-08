@@ -1,0 +1,31 @@
+#order-list-title {
+    font-size: 1.5em;
+    color: #4CAF50
+}
+
+#key {
+    font-weight: bold;
+}
+
+#total {
+    right: 10px;
+    margin-bottom: 0px;
+}
+
+#md-list {
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+#date {
+    margin-left: 72%;
+}
+
+#total {
+    margin-left: 60%;
+}
+
+#no-orders {
+    text-align: center;
+    margin-top: 30px;
+}

@@ -2,10 +2,6 @@
 
 class NavbarController {
 
-  $('#settings').on('click', function () {
-    $('#menu').css('display', 'block');
-  })
-
   isCollapsed = true;
 
   constructor(Auth) {

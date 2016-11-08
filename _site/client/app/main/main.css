@@ -1,0 +1,56 @@
+.thing-form {
+  margin: 20px 0;
+}
+
+#banner {
+  border-bottom: none;
+  margin-top: -20px;
+}
+
+#banner h1 {
+  font-size: 60px;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.hero-unit {
+  position: relative;
+  padding: 30px 15px;
+  color: #F5F5F5;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  background-color: #46B6AC;
+  background-image: url('../../assets/images/food2.jpeg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.navbar-text {
+  margin-left: 15px;
+}
+
+.card-square {
+  margin-right: 40px;
+  margin-bottom: 40px;
+}
+
+.card-square.mdl-card {
+  width: 350px;
+  height: 340px;
+}
+
+.restraunts {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-square>.mdl-card__title {
+  color: #fff;
+  background: url('../../assets/images/logo_pure.png') bottom right 15% no-repeat #46B6AC;
+}
+
+.btn {
+  float: right;
+}
+

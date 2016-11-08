@@ -1,0 +1,35 @@
+<navbar></navbar>
+<div class="container">
+	<div class="col-md-4"></div>
+	<div class="col-md-4">
+		<md-content>
+			<md-list flex>
+				<md-subheader class="md-no-sticky" id="order-list-title">Your orders</md-subheader>
+				<md-divider></md-divider>
+				<md-list-item class="md-3-line" ng-repeat="order in orderList" ng-click="null" ng-if="orderList.length">
+					<div class="md-list-item-text" layout="column">
+						<div id="md-list" class="md-3-line" ng-repeat="(key,value) in order" ng-click="null">
+							<h4>
+								<span id="date" ng-if="key=='date'">{{ value | date:'mediumDate'}}</span>
+								<span id="total" ng-if="key=='total'">Total : &nbsp; {{ value | currency:'&#8377;' }}</span>
+							</h4>
+							<div class="md-3-line">
+								<div ng-repeat="(i,j) in value">
+									<h3><span id="key">{{ i | capitalize }}</span> &nbsp; : &nbsp; <span ng-if="key!='price'">{{ j }}</span>
+										<span ng-if="key=='price'">{{ j | currency:'&#8377;' }}</span>
+									</h3>
+								</div>
+							</div>
+						</div>
+						<md-divider></md-divider>
+					</div>
+				</md-list-item>
+				<div ng-if="!orderList.length" id="no-orders">
+					<p>No Orders.</p>
+				</div>
+			</md-list>
+		</md-content>
+	</div>
+	<div class="col-md-4"></div>
+</div>
+<footer></footer>

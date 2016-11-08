@@ -1,0 +1,32 @@
+<navbar></navbar>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-6">
+      <h1 class="page-header">Card</h1>
+      <form>
+        <md-input-container class="md-block" flex-gt-xs>
+          <label>Card No.</label>
+          <input ng-model="card_no">
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-xs>
+          <label>Card Expiry Month</label>
+          <input ng-model="exp_month">
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-xs>
+          <label>Card Expiry Year</label>
+          <input ng-model="exp_year">
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-xs>
+          <label>Name on Card</label>
+          <input ng-model="name">
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-xs>
+          <label>Security Code</label>
+          <input ng-model="code">
+        </md-input-container>
+      </form>
+      <md-button ng-click="cardpayment()" class="md-raised md-primary">Order it!</md-button>
+    </div>
+  </div>
+</div>
