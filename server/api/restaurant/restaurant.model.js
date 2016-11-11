@@ -10,12 +10,7 @@ var menu = new mongoose.Schema({
 var RestaurantSchema = new mongoose.Schema({
   name: String,
   speciality: [String],
-  menu: {
-    'Main_Course_Non_Veg': [menu],
-    'Main_Course_Veg': [menu],
-    'Starters': [menu],
-    'Deserts': [menu]
-  },
+  menu: mongoose.Schema.Types.Mixed,
   address: String,
   phone: Number
 })
