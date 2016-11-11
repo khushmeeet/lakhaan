@@ -12,7 +12,8 @@ angular.module('lakhaanaApp', [
     'ngRoute',
     'angular-hmac-sha512',
     'validation.match',
-    'ngMaterial'
+    'ngMaterial',
+    'jkAngularRatingStars'
   ])
   .config(function ($urlRouterProvider, $locationProvider) {
     $urlRouterProvider

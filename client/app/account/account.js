@@ -1,7 +1,7 @@
-'use strict';
+'use strict'
 
 angular.module('lakhaanaApp')
-  .config(function($stateProvider) {
+  .config(function ($stateProvider) {
     $stateProvider
       .state('login', {
         url: '/login',
@@ -13,12 +13,12 @@ angular.module('lakhaanaApp')
         url: '/logout?referrer',
         referrer: 'main',
         template: '',
-        controller: function($state, Auth) {
+        controller: function ($state, Auth) {
           var referrer = $state.params.referrer ||
-                          $state.current.referrer ||
-                          'main';
-          Auth.logout();
-          $state.go(referrer);
+            $state.current.referrer ||
+            'main'
+          Auth.logout()
+          $state.go(referrer)
         }
       })
       .state('signup', {
@@ -33,12 +33,12 @@ angular.module('lakhaanaApp')
         controller: 'SettingsController',
         controllerAs: 'vm',
         authenticate: true
-      });
+      })
   })
-  .run(function($rootScope) {
-    $rootScope.$on('$stateChangeStart', function(event, next, nextParams, current) {
+  .run(function ($rootScope) {
+    $rootScope.$on('$stateChangeStart', function (event, next, nextParams, current) {
       if (next.name === 'logout' && current && current.name && !current.authenticate) {
-        next.referrer = current.name;
+        next.referrer = current.name
       }
-    });
-  });
+    })
+  })

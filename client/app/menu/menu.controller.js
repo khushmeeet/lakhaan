@@ -13,7 +13,9 @@ angular.module('lakhaanaApp')
         $scope.res_obj = {
           name: response.name,
           spec: response.speciality,
-          address: response.address
+          address: response.address,
+          rating: response.rating,
+          phone: response.phone
         }
         $scope.menuObject = response.menu
         res_phone = response.phone

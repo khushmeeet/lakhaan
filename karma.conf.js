@@ -30,6 +30,8 @@ module.exports = function(config) {
       'client/bower_components/angular-messages/angular-messages.js',
       'client/bower_components/angular-material/angular-material.js',
       'client/bower_components/material-design-lite/material.min.js',
+      'client/bower_components/what-input/what-input.js',
+      'client/bower_components/foundation-sites/dist/foundation.js',
       'client/bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'node_modules/socket.io-client/socket.io.js',

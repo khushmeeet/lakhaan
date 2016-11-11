@@ -5,6 +5,8 @@
     <div style="display:inline-flex;">
       <p class="lead" ng-repeat="i in res_obj.spec">{{i}}&nbsp;</p>
     </div>
+    <h6>Phone: +91 {{res_obj.phone}}</h6>
+    <jk-rating-stars max-rating="5" rating="res_obj.rating" read-only="true" style="margin: 0px 50% 0 44%;"></jk-rating-stars>
     <p class="lead">{{res_obj.address}}</p>
   </div>
 </header>

@@ -18,7 +18,9 @@
             <h2 class="mdl-card__title-text">{{item.name}}</h2>
           </div>
           <div class="mdl-card__supporting-text">
-            <h6 ng-repeat="s in item.speciality">{{ s }}</h6>
+            <!--<p ng-repeat="s in item.speciality">{{ s }}</p>-->
+            <h6>Delivery time: {{item.delivery_time}}</h6>
+            <jk-rating-stars max-rating="5" rating="item.rating" read-only="true"></jk-rating-stars>
           </div>
           <div class="mdl-card__actions mdl-card--border">
             <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect btn" ng-click="menu(item._id)">
