@@ -12,7 +12,9 @@ var RestaurantSchema = new mongoose.Schema({
   speciality: [String],
   menu: mongoose.Schema.Types.Mixed,
   address: String,
-  phone: Number
+  phone: Number,
+  rating: Number,
+  photo: String
 })
 
 export default mongoose.model('Restaurant', RestaurantSchema)
