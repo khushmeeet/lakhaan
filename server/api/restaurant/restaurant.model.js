@@ -16,7 +16,7 @@ var RestaurantSchema = new mongoose.Schema({
   rating: Number,
   delivery_time: String,
   photo: String,
-  min_delivery: String
+  min_delivery: Number
 })
 
 export default mongoose.model('Restaurant', RestaurantSchema)
