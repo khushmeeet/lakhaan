@@ -4,7 +4,9 @@ angular.module('lakhaanaApp')
   .controller('CheckoutCtrl', function ($scope, $location, shareData, Auth, shareData2) {
     var total = 0
     $scope.userLoggedIn = Auth.isLoggedIn();
-    var res_phone = shareData2.get();
+    var send = shareData2.get();
+    var res_phone = send[0]
+    var min_delivery = send[1]
 
     $scope.order = shareData.get();
     var in_order = $scope.order;
@@ -15,6 +17,10 @@ angular.module('lakhaanaApp')
     })
 
     $scope.totalCost = total;
+
+    if(total <= min_delivery){
+      $scope.min_delivery_tax = 50
+    }
 
     $scope.payment = function (value) {
       if (value === 'online') {
