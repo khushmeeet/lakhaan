@@ -6,10 +6,10 @@ angular.module('lakhaanaApp')
     var i = 0
     var res_phone
     $scope.quantity = 1
-    menuService.get({
-      id: $stateParams.id
-    },
+    var baseImg
+    menuService.get({id: $stateParams.id},
       function success (response) {
+        baseImg = response.photo
         $scope.res_obj = {
           name: response.name,
           spec: response.speciality,
