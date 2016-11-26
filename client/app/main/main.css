@@ -63,3 +63,7 @@ ul.rating li {
 ul.rating li i {
   font-size: 30px;
 }
+
+.res-cards:hover {
+  cursor: pointer;
+}
