@@ -10,7 +10,7 @@
 				<p class="review_p2" style="text-align:right;">{{m.price|currency:'&#8377;'}}</p>
 			</md-list-item>
 			<div class="final">
-				<h5 class="total">Tax &nbsp; &nbsp; : {{min_delivery_tax | currency:'&#8377;'}}</h5>
+				<h5 ng-show="min_delivery_tax" class="total">Tax : {{min_delivery_tax | currency:'&#8377;'}}</h5>
 				<h5 class="total">Total : {{totalCost | currency:'&#8377;'}}</h5>
 			</div>
 		</md-list>

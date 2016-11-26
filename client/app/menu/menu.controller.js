@@ -8,6 +8,7 @@ angular.module('lakhaanaApp')
     $scope.quantity = 1
     var baseImg
     var min_delivery
+    var send = []
     menuService.get({id: $stateParams.id},
       function success (response) {
         baseImg = response.photo
@@ -18,9 +19,9 @@ angular.module('lakhaanaApp')
           rating: response.rating,
           phone: response.phone
         }
-        min_delivery = response.min_delivery
+        send[0] = response.phone
+        send[1] = response.min_delivery
         $scope.menuObject = response.menu
-        res_phone = response.phone
         $scope.keys = Object.keys($scope.menuObject)
       },
       function error (errorResponse) {
@@ -42,9 +43,6 @@ angular.module('lakhaanaApp')
       var key = _.findKey($scope.order, item)
       delete $scope.order[key]
     }
-    var send = []
-    send[0] = res_phone
-    send[1] = min_delivery
     $scope.continue = function () {
       var id = Auth.getCurrentUser()._id
       shareData.store($scope.order)

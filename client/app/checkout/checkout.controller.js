@@ -17,9 +17,10 @@ angular.module('lakhaanaApp')
     })
 
     $scope.totalCost = total;
-
+    var tax = 50
     if(total <= min_delivery){
-      $scope.min_delivery_tax = 50
+      $scope.min_delivery_tax = tax
+      $scope.totalCost = $scope.totalCost + tax
     }
 
     $scope.payment = function (value) {
