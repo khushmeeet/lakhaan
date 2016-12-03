@@ -9,6 +9,7 @@ angular.module('lakhaanaApp')
     var baseImg
     var min_delivery
     var send = []
+
     menuService.get({id: $stateParams.id},
       function success (response) {
         baseImg = response.photo
@@ -29,6 +30,8 @@ angular.module('lakhaanaApp')
         console.log(errorResponse)
       })
 
+    
+
     $scope.addItem = function (quantity, name, price) {
       var obj = {
         'name': name,
@@ -44,6 +47,7 @@ angular.module('lakhaanaApp')
       var key = _.findKey($scope.order, item)
       delete $scope.order[key]
     }
+
     $scope.continue = function () {
       var id = Auth.getCurrentUser()._id
       shareData.store($scope.order)
