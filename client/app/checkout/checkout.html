@@ -42,7 +42,7 @@
 			</div>
 		</md-content>-->
 		<md-button ng-if="userLoggedIn" ng-click="payment(order_options)" class="md-raised md-primary checkout_btn">Checkout</md-button>
-		<md-button ng-if="!userLoggedIn" ui-sref="login" class="md-raised md-primary checkout_btn">Login in</md-button>
+		<md-button ng-if="!userLoggedIn" ng-click="login()" class="md-raised md-primary checkout_btn">Login in</md-button>
 	</div>
 </div>
 
