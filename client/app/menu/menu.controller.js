@@ -17,7 +17,8 @@ angular.module('lakhaanaApp')
           spec: response.speciality,
           address: response.address,
           rating: response.rating,
-          phone: response.phone
+          phone: response.phone,
+          photo: response.photo
         }
         send[0] = response.phone
         send[1] = response.min_delivery
