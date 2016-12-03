@@ -19,9 +19,9 @@ var UserSchema = new Schema({
   },
   address: {
     name: String,
-    phone: Number,
     address: String
   },
+  phone: Number,
   password: String,
   provider: String,
   salt: String,
