@@ -66,3 +66,12 @@ ul.rating li i {
 .res-cards:hover {
   cursor: pointer;
 }
+
+.mdl-card__supporting-text h3{
+  margin: 7px 0px 10px 0px;
+}
+
+.mdl-card__supporting-text h6{
+  margin-top: 6px;
+  margin-bottom: 4px;
+}
