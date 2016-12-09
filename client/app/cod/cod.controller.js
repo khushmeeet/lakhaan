@@ -4,6 +4,7 @@
   function CodComponent($scope, shareData2, shareData, User, Auth, $mdToast, sendSMS) {
     $scope.total = shareData2.get()
     var order = shareData.get()
+    console.log($scope.total,$scope.order)
     $scope.placeOrder = function (form) {
       if (form) {
         User.updateOrder({ id: Auth.getCurrentUser()._id }, { order: order },
