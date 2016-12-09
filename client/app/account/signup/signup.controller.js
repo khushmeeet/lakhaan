@@ -15,6 +15,21 @@ class SignupController {
   register(form) {
     this.submitted = true;
 
+    function getCookie(cname) {
+      var name = cname + "=";
+      var ca = document.cookie.split(';');
+      for(var i = 0; i <ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0)==' ') {
+              c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+              return c.substring(name.length,c.length);
+          }
+      }
+      return "";
+   }
+
     if (form.$valid) {
       this.Auth.createUser({
         name: this.user.name,
@@ -24,7 +39,12 @@ class SignupController {
       })
       .then(() => {
         // Account created, redirect to home
-        this.$state.go('main');
+        if(getCookie('foodlee')==' ') {
+          this.$state.go('main');
+        }
+        else {
+          this.$state.go('checkout')
+        }
       })
       .catch(err => {
         err = err.data;
