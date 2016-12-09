@@ -3,8 +3,8 @@
 angular.module('lakhaanaApp')
   .factory('sendSMS', function ($resource) {
     return $resource('https://control.msg91.com/api/sendhttp.php', {
-      authkey: '129164AppiG3Vti4b580c95b8',
-      mobiles: '9944490111',
+      authkey: '133386AMaB5ImNjl584ab985',
+      mobiles: '9944490111,9161999900',
       message: 'this is message',
       sender: 'HP-FOODLE',
       route: '4',

@@ -4,9 +4,7 @@
   function CodComponent($scope, shareData2, shareData, User, Auth, $mdToast, sendSMS) {
     $scope.total = shareData2.get()
     var order = shareData.get()
-    console.log($scope.total)
     $scope.placeOrder = function (form) {
-      console.log($scope.total)
       if (form) {
         User.updateOrder({ id: Auth.getCurrentUser()._id }, { order: order },
           function success(response) {
@@ -22,8 +20,8 @@
           .position('bottom');
         $mdToast.show(toast);
         sendSMS.query({
-          authkey: '129164AppiG3Vti4b580c95b8',
-          mobiles: $scope.total[1],
+          authkey: '133386AMaB5ImNjl584ab985',
+          mobiles: '9944490100',
           message: order.toString(),
           sender: 'HP-FOODLE',
           route: 4,
