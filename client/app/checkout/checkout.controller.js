@@ -51,7 +51,8 @@ angular.module('lakhaanaApp')
       $scope.totalCost = $scope.totalCost + delivery_charge
     }
 
-    $scope.totalCost = $scope.totalCost + $scope.vat_tax + $scope.st_tax + $scope.sb_tax + $scope.kk_tax
+    total = $scope.totalCost + $scope.vat_tax + $scope.st_tax + $scope.sb_tax + $scope.kk_tax
+    $scope.totalCost = total
 
     function setCookie(cname, cvalue, min) {
       var d = new Date();
