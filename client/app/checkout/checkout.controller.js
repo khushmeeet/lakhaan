@@ -63,7 +63,7 @@ angular.module('lakhaanaApp')
 
     $scope.login = function () {
       $location.path('/login')
-      setCookie('foodlee',in_order, 1)
+      setCookie('foodlee',in_order, 0.5)
     }
 
     $scope.payment = function (value) {
