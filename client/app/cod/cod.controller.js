@@ -4,7 +4,7 @@
   function CodComponent($scope, shareData2, shareData, User, Auth, $mdToast, sendSMS) {
     $scope.total = shareData2.get()
     var order = shareData.get()
-    console.log($scope.total,order)
+
     $scope.placeOrder = function (form) {
       if (form) {
         User.updateOrder({ id: Auth.getCurrentUser()._id }, { order: order },
@@ -14,6 +14,15 @@
           function error(error) {
             console.log(error)
           })
+        var orderText = $scope.name+'\n'+$scope.phone+'\n'+$scope.address+'\n\n'
+        _.forOwn(order, function (value,key) {
+          orderText += '\n'
+          _.forOwn(value, function (value,key) {
+            orderText += key+':'
+            orderText += value
+            orderText += '\n'
+          })
+        })
         var toast = $mdToast.simple()
           .textContent('Your order is placed, Thank you!')
           .action('OK')
@@ -22,8 +31,17 @@
         $mdToast.show(toast);
         sendSMS.query({
           authkey: '133386AMaB5ImNjl584ab985',
-          mobiles: '9161999900'+','+$scope.total[1],
-          message: JSON.stringify(order),
+          mobiles: '9944490100',
+          message: orderText,
+          sender: 'FOODLE',
+          route: 4,
+          country: 91,
+          response: 'json'
+        });
+        sendSMS.query({
+          authkey: '133386AMaB5ImNjl584ab985',
+          mobiles: $scope.phone,
+          message: 'Thank you for placing the order. Your order amounting to '+$scope.total[0]+' will be delivered soon.',
           sender: 'FOODLE',
           route: 4,
           country: 91,
