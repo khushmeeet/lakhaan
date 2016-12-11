@@ -2,6 +2,14 @@
   margin: 20px 0;
 }
 
+.main-container {
+  height: 300px;
+}
+
+.main-container div {
+  margin-top: 100px;
+}
+
 #banner {
   border-bottom: none;
   margin-top: -20px;

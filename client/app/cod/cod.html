@@ -13,15 +13,15 @@
 		<form name="addressForm">
 			<md-input-container class="md-block" flex-gt-xs>
 				<label>Name</label>
-				<input ng-model="address.name" type="text" required>
+				<input ng-model="name" type="text" required>
 			</md-input-container>
 			<md-input-container class="md-block" flex-gt-xs>
 				<label>Phone</label>
-				<input ng-model="address.phone" type="number" required>
+				<input ng-model="phone" type="number" required>
 			</md-input-container>
 			<md-input-container class="md-block" flex-gt-xs>
 				<label>Address</label>
-				<input ng-model="address.address" type="text" required>
+				<input ng-model="address" type="text" required>
 			</md-input-container>
 		</form>
 		<md-button ng-click="placeOrder(addressForm.$valid)" class="md-raised md-primary">Place your order</md-button>
