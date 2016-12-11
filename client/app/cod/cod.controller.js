@@ -31,7 +31,7 @@
         $mdToast.show(toast);
         sendSMS.query({
           authkey: '133386AMaB5ImNjl584ab985',
-          mobiles: '9944490100',
+          mobiles: '9161999900',
           message: orderText,
           sender: 'FOODLE',
           route: 4,
