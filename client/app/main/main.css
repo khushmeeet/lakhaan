@@ -6,10 +6,6 @@
   height: 300px;
 }
 
-.main-container div {
-  margin-top: 100px;
-}
-
 #banner {
   border-bottom: none;
   margin-top: -20px;
@@ -28,11 +24,17 @@
   text-align: center;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
   background-color: #46B6AC;
-  background-image: url('../../assets/images/cover2.png');
+  background-image: url('../../assets/images/banner.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.main-container div {
+  margin-top: 100px;
+  z-index: 9999;
+}
+
 
 .navbar-text {
   margin-left: 15px;

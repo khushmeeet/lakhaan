@@ -67,10 +67,7 @@ angular.module('lakhaanaApp')
     }
 
     $scope.payment = function (value) {
-      if (value === 'online') {
-        $location.path('/payment')
-      }
-      else {
+      if (value === 'cod') {
         in_order.total = total;
         in_order.date = Date.now();
         shareData2.store([total, res_phone])

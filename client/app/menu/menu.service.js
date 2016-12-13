@@ -31,4 +31,15 @@ angular.module('lakhaanaApp')
             return mem;
         }
     };
+  })
+  .factory('shareData3',function(){
+    var mem;
+    return {
+        store: function (order) {
+            mem=order;
+        },
+        get: function () {
+            return mem;
+        }
+    };
   });

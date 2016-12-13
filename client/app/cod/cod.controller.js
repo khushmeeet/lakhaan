@@ -1,9 +1,10 @@
 'use strict';
 (function () {
 
-  function CodComponent($scope, shareData2, shareData, User, Auth, $mdToast, sendSMS) {
+  function CodComponent($scope, shareData2, shareData, User, Auth, $mdToast, sendSMS, shareData3) {
     $scope.total = shareData2.get()
     var order = shareData.get()
+    var resName = shareData3.get() 
 
     $scope.placeOrder = function (form) {
       if (form) {
@@ -14,11 +15,13 @@
           function error(error) {
             console.log(error)
           })
-        var orderText = $scope.name+'\n'+$scope.phone+'\n'+$scope.address+'\n\n'
+        var orderText = $scope.name+'\n'+$scope.phone+'\n'+$scope.address+'\n'
+        orderText += '---------------------\n'
+        orderText += 'Restaurant' + resName + '\n'
         _.forOwn(order, function (value,key) {
           orderText += '\n'
           _.forOwn(value, function (value,key) {
-            orderText += key+':'
+            orderText += key + ':'
             orderText += value
             orderText += '\n'
           })

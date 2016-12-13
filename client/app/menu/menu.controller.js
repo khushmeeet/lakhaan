@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module('lakhaanaApp')
-  .controller('MenuCtrl', function ($scope, $stateParams, $location, menuService, Auth, shareData, userService, shareData2) {
+  .controller('MenuCtrl', function ($scope, $stateParams, $location, menuService, Auth, shareData, userService, shareData2, shareData3) {
     $scope.order = {}
     var i = 0
     var res_phone
@@ -21,6 +21,7 @@ angular.module('lakhaanaApp')
           phone: response.phone,
           photo: response.photo
         }
+        shareData3.store(response.name);
         send[0] = response.phone
         send[1] = response.min_delivery
         $scope.menuObject = response.menu
