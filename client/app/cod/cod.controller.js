@@ -17,7 +17,7 @@
           })
         var orderText = $scope.name+'\n'+$scope.phone+'\n'+$scope.address+'\n'
         orderText += '---------------------\n'
-        orderText += 'Restaurant' + resName + '\n'
+        orderText += 'Restaurant: ' + resName + '\n'
         _.forOwn(order, function (value,key) {
           orderText += '\n'
           _.forOwn(value, function (value,key) {
@@ -26,6 +26,7 @@
             orderText += '\n'
           })
         })
+        orderText += 'Total Bill: ' + $scope.total[0];
         var toast = $mdToast.simple()
           .textContent('Your order is placed, Thank you!')
           .action('OK')
