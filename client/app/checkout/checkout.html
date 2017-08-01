@@ -23,26 +23,6 @@
 		<md-radio-group ng-model="order_options">
 			<md-radio-button value="cod">Cash on Delivery</md-radio-button>
 		</md-radio-group>
-		<!--<md-content layout-gt-sm="row">
-			<div>
-				<md-input-container>
-					<label>Name</label>
-					<input input="customer.name" />
-				</md-input-container>
-				<md-input-container style="margin-right:0px;">
-					<label>Phone</label>
-					<input input="customer.phone" type="number" />
-				</md-input-container>
-			</div>
-		</md-content>
-		<md-content>
-			<div>
-				<md-input-container style="width:100%;">
-					<label>Address</label>
-					<input input="customer.address" />
-				</md-input-container>
-			</div>
-		</md-content>-->
 		<md-button ng-if="userLoggedIn" ng-click="payment(order_options)" class="md-raised md-primary checkout_btn">Checkout</md-button>
 		<md-button ng-if="!userLoggedIn" ng-click="login()" class="md-raised md-primary checkout_btn">Login</md-button>
 	</div>
