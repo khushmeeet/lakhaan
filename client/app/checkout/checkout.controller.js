@@ -40,10 +40,13 @@ angular.module('lakhaanaApp')
 
     $scope.totalCost = total;
 
-    $scope.vat_tax = ($scope.totalCost * 14.50 ) / 100
-    $scope.st_tax = ($scope.totalCost * 5.6) / 100
-    $scope.sb_tax = ($scope.totalCost * 0.2) / 100
-    $scope.kk_tax = ($scope.totalCost * 0.2) / 100
+    $scope.cgst = ($scope.totalCost * 9) / 100
+    $scope.sgst = ($scope.totalCost * 9) / 100
+
+    // $scope.vat_tax = ($scope.totalCost * 14.50 ) / 100
+    // $scope.st_tax = ($scope.totalCost * 5.6) / 100
+    // $scope.sb_tax = ($scope.totalCost * 0.2) / 100
+    // $scope.kk_tax = ($scope.totalCost * 0.2) / 100
 
     var delivery_charge = 50
     if(total <= min_delivery) {
@@ -51,7 +54,7 @@ angular.module('lakhaanaApp')
       $scope.totalCost = $scope.totalCost + delivery_charge
     }
 
-    total = $scope.totalCost + $scope.vat_tax + $scope.st_tax + $scope.sb_tax + $scope.kk_tax
+    total = $scope.totalCost + $scope.cgst + $scope.sgst
     $scope.totalCost = total
 
     function setCookie(cname, cvalue, min) {
