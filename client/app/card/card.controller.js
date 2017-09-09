@@ -6,6 +6,7 @@ angular.module('lakhaanaApp')
 
     var order_id = shareData2.get();
 
+    // experimental
     $scope.cardpayment = function(){
       cardPayment.save({},{
         'order_id':order_id,
