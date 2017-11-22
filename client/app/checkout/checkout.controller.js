@@ -40,8 +40,8 @@ angular.module('lakhaanaApp')
 
     $scope.totalCost = total;
 
-    $scope.cgst = ($scope.totalCost * 9) / 100
-    $scope.sgst = ($scope.totalCost * 9) / 100
+    $scope.cgst = ($scope.totalCost * 2.5) / 100
+    $scope.sgst = ($scope.totalCost * 2.5) / 100
 
     // $scope.vat_tax = ($scope.totalCost * 14.50 ) / 100
     // $scope.st_tax = ($scope.totalCost * 5.6) / 100
